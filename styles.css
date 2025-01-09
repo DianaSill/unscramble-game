@@ -1,0 +1,320 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+
+    /* Background Color and Cartography Texture */
+    background-color: #deb9a5;
+    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+    background-size: 400px 400px;
+    /* Adjusting to zoom less */
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    animation: swayBackground 20s linear infinite;
+    /* Adjusted for circular motion */
+}
+
+/* Animation for Circular Swaying Background */
+@keyframes swayBackground {
+    0% {
+        background-position: 0 0;
+        /* Start at top-left */
+    }
+
+    25% {
+        background-position: 20px -20px;
+        /* Move in top-right direction */
+    }
+
+    50% {
+        background-position: 0 -40px;
+        /* Move to bottom */
+    }
+
+    75% {
+        background-position: -20px -20px;
+        /* Move in bottom-left direction */
+    }
+
+    100% {
+        background-position: 0 0;
+        /* Back to original position */
+    }
+}
+
+/* Game Area */
+.game {
+    text-align: center;
+    width: 90%;
+    /* Adjust width to make it more flexible */
+    max-width: 800px;
+    position: relative;
+    z-index: 10;
+    /* Keeps the game content above the background */
+}
+
+/* Title with Neon Glow Effect */
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 15px #b2a7cc, 0 0 30px #b2a7cc;
+    /* Soft light purple glow */
+    margin-bottom: 20px;
+}
+
+/* Scrambled Word */
+.scrambled-word {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px 0;
+    letter-spacing: 5px;
+    animation: pulse 1.5s infinite;
+    text-transform: uppercase;
+    color: #f9f9f9;
+}
+
+/* Input Field */
+.guess-input {
+    font-size: 1.5rem;
+    padding: 12px;
+    border: none;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    background: #2c2f38;
+    color: #fff;
+    border-radius: 25px;
+    margin-top: 20px;
+    outline: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.guess-input::placeholder {
+    color: #aaa;
+}
+
+/* Buttons */
+.button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 15px;
+    border: none;
+    background: linear-gradient(90deg, #b2a7cc, #d1c5e0);
+    /* Light purple gradient */
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+/* Feedback */
+.feedback {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+.feedback.success {
+    color: #28a745;
+}
+
+.feedback.error {
+    color: #e74c3c;
+}
+
+.feedback.info {
+    color: #f39c12;
+}
+
+/* Stats */
+.stats {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    color: #f9f9f9;
+}
+
+/* Animations */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.animate-title {
+    animation: fade-in 1.5s ease-in-out;
+}
+
+.animate-word {
+    animation: bounce-in 1s ease-in-out;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-feedback {
+    animation: flash 1.2s infinite alternate;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Hint Letter Style */
+.hint-letter {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/* Floating House Button */
+.floating-house-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    /* Make sure it's above other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #b2a7cc;
+    border-radius: 50%;
+    /* Circle shape */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    /* Shadow for effect */
+    transition: transform 0.3s ease;
+}
+
+.floating-house-button:hover {
+    transform: scale(1.1);
+    /* Slight scale effect when hovered */
+}
+
+.floating-house-button .house-icon {
+    width: 100%;
+    /* Makes the image scale to fill the button */
+    height: 100%;
+    /* Makes the image scale to fill the button */
+}
+
+/* Responsive Styles */
+
+/* Mobile devices (max-width: 600px) */
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 2.5rem;
+        /* Smaller title on mobile */
+    }
+
+    .scrambled-word {
+        font-size: 2rem;
+        /* Smaller scrambled word */
+    }
+
+    .guess-input {
+        font-size: 1.2rem;
+        width: 90%;
+        /* Make input field take more width on smaller screens */
+        max-width: none;
+        /* Allow it to stretch */
+    }
+
+    .button {
+        padding: 12px 25px;
+        /* Smaller padding for buttons */
+        font-size: 1.2rem;
+        /* Adjust button font size */
+    }
+
+    .stats,
+    .feedback {
+        font-size: 1.2rem;
+        /* Adjust font size of stats and feedback */
+    }
+}
+
+/* Tablet devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+        /* Smaller title on tablet */
+    }
+
+    .scrambled-word {
+        font-size: 2.5rem;
+        /* Adjust scrambled word size */
+    }
+
+    .button {
+        padding: 12px 25px;
+        /* Adjust button padding */
+        font-size: 1.3rem;
+        /* Adjust button font size */
+    }
+}
+
+/* Desktop devices (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .title {
+        font-size: 3.5rem;
+        /* Title adjusted for tablets and small desktops */
+    }
+
+    .scrambled-word {
+        font-size: 2.8rem;
+        /* Scrambled word size for desktops */
+    }
+
+    .button {
+        padding: 12px 25px;
+        /* Adjust button padding */
+        font-size: 1.4rem;
+        /* Adjust font size */
+    }
+
+    .stats,
+    .feedback {
+        font-size: 1.3rem;
+        /* Adjust font size of stats and feedback */
+    }
+}

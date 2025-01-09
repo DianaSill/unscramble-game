@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="game">
+        <h1 class="title animate-title"> Unscramble This! </h1>
+        <div id="scrambled-word" class="scrambled-word animate-word">?????</div>
+        <input type="text" id="guess-input" class="guess-input animate-input" placeholder="Type your guess..." />
+        <div class="buttons">
+            <button id="guess-button" class="button">Guess</button>
+            <button id="new-word-button" class="button animate-button">New Word</button>
+            <button id="hint-button" class="button animate-button">Hint</button>
+            <button id="reveal-word-button" class="button animate-button" style="display: none;">Reveal the
+                Word</button>
+        </div>
+        <div id="feedback" class="feedback animate-feedback"></div>
+        <div class="stats animate-stats">
+            <p>Score: <span id="score">0</span></p>
+            <p>Attempts: <span id="attempts">0</span></p>
+        </div>
+    </div>
+    <a href="https://dianasill.github.io/" class="floating-house-button">
+        <img src="assets/house.svg" alt="House Icon" class="house-icon" />
+    </a>
+    <script src="script.js"></script>
+</body>
+
+</html>
