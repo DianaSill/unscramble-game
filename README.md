@@ -6,7 +6,7 @@ This is a simple **Word Unscramble Game** built using **HTML**, **CSS**, and **J
 ---
 
 ## Snapshot
-![Unscramble Game Screenshot](assets/gameexample.gif)
+![Unscramble Game Screenshot](assets/page.png)
 
 ---
 
